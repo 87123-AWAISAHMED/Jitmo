@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width:1490px)"href="phone.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+          .star-rating {
+  display: flex;
+  gap: 10px;
+  left:50px;
+  font-size: 40px;
+  color: #ccc; /* default grey stars */
+  cursor: pointer;
+  user-select: none;
+}
+
+.star-rating .star.selected,
+.star-rating .star.hovered {
+  color: gold; /* gold when selected or hovered */
+}
+
+.star-rating .star:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+    </style>
     
 </head>
 <body>
@@ -103,14 +124,20 @@
           placeholder="Enter your Address">
         </div>
         <br>
-        <div class="form-group">
-          <label for="name">Message:</label>
-          <textarea name="Message" id="Message" cols="30" rows="10"></textarea>
-         
-        </div>
-        
-      </div>
+         <label for="Give Your Rating">rating :</label>
+    <div class="form-group star-rating" id="starRating">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+<input type="hidden" name="rating" id="selectedRating">
+
+
     </form>
+  </div>
+
     
     <div id="parent">
       <button class="btn1" type="reset">Reset Now</button>
@@ -130,4 +157,3 @@
   </footer>
 </body>
 </html>
-13123
